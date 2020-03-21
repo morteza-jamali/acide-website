@@ -40,6 +40,180 @@ Table of Content:
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+.laptop {
+  width: 100%;
+  height: 320px;
+  -webkit-perspective: 2400px;
+          perspective: 2400px;
+  -webkit-perspective-origin: 50% 100%;
+          perspective-origin: 50% 100%;
+}
+@media screen and (max-width: 1000px) {
+  .laptop {
+    width: 320px;
+    height: 196px;
+  }
+}
+.laptop-block {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  border-radius: 16px 16px 0 0;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(23%, #E5EDF6), color-stop(91%, #D2D9E6));
+  background-image: linear-gradient(90deg, #E5EDF6 23%, #D2D9E6 91%);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all ease .32s;
+  transition: all ease .32s;
+}
+.laptop-block:after {
+  content: "";
+  background-color: #fff;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+}
+.laptop-top {
+  position: relative;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: calc(100% - 32px);
+  border-radius: 16px;
+  background-color: #E0E8F2;
+  box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transform: translate3d(0, 0, 0) rotateX(0deg);
+          transform: translate3d(0, 0, 0) rotateX(0deg);
+  -webkit-transition: all ease .32s;
+  transition: all ease .32s;
+}
+.laptop-top:before {
+  position: absolute;
+  z-index: 2;
+  content: "";
+  width: 100%;
+  height: 40px;
+  left: 0;
+  bottom: 0;
+  background-color: inherit;
+}
+.laptop-top div {
+  position: absolute;
+  z-index: 3;
+}
+.laptop-top div:first-child {
+  left: 6px;
+  top: 4px;
+  width: calc(100% - 12px);
+  height: calc(100% - 6px);
+  background-color: transparent;
+  border: 1px solid rgba(176, 200, 216, 0.2);
+  border-radius: 16px 16px 0 0;
+  border-bottom: 0;
+}
+.laptop-top div:last-child {
+  background-color: #fff;
+  top: 24px;
+  left: 24px;
+  width: calc(100% - 50px);
+  height: calc(100% - 40px);
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+.laptop-top div:last-child img {
+  width: 100%;
+  height: 100%;
+}
+.laptop-bottom > div {
+  width: 100%;
+}
+.laptop-bottom > div:first-child {
+  position: relative;
+  height: 32px;
+}
+@media screen and (max-width: 1000px) {
+  .laptop-bottom > div:first-child {
+    height: 24px;
+  }
+}
+.laptop-bottom > div:first-child > div {
+  width: 100%;
+}
+.laptop-bottom > div:first-child > div:first-child {
+  position: relative;
+  z-index: 2;
+  height: 20px;
+  background-color: #D2D9E6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+@media screen and (max-width: 1000px) {
+  .laptop-bottom > div:first-child > div:first-child {
+    height: 12px;
+  }
+}
+.laptop-bottom > div:first-child > div:first-child div:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(23%, #E5EDF6), color-stop(91%, #D2D9E6));
+  background-image: linear-gradient(90deg, #E5EDF6 23%, #D2D9E6 91%);
+  border-radius: 3px;
+}
+.laptop-bottom > div:first-child > div:first-child div:nth-child(2) {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(23%, #E5EDF6), color-stop(50%, #D2D9E6));
+  background-image: linear-gradient(90deg, #E5EDF6 23%, #D2D9E6 50%);
+  border-radius: 3px;
+}
+.laptop-bottom > div:first-child > div:first-child div:last-child {
+  position: absolute;
+  width: 30%;
+  height: 200%;
+  background-color: #E8EFF8;
+  border-radius: 56px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -15%;
+  box-shadow: inset -5px 0 3px 0 #F4F7FA, inset 9px 0 5px 0 rgba(0, 0, 0, 0.14);
+}
+.laptop-bottom > div:first-child > div:last-child {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  background-color: #CFD3E2;
+  border-radius: 38px;
+}
+
+.laptop--closed .laptop-block {
+  top: calc(100% - 50px);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.laptop--closed .laptop-top {
+  overflow: auto;
+  -webkit-transform: translate3d(0, 0, 0) rotateX(-90deg);
+          transform: translate3d(0, 0, 0) rotateX(-90deg);
+}
+
 .list {
   list-style: none;
   margin: 0px;
@@ -224,7 +398,7 @@ ul {
     top: -70px;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(0, 0, 0);
     transform: translateY(70px);
     transition: transform 500ms ease, background 500ms ease;
     -webkit-transition: transform 500ms ease, background 500ms ease;
@@ -341,7 +515,7 @@ ul {
     width: 100%;
     min-height: 900px; }
     .home_banner_area .banner_inner .overlay {
-      background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+      background: linear-gradient(90deg, rgb(25, 23, 61) 0%, rgb(9, 9, 121) 56%, rgb(55, 12, 139) 100%);
       position: absolute;
       left: 0;
       right: 0;
